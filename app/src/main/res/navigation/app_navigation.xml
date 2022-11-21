@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/myHomeFragment">
+
+    <fragment
+        android:id="@+id/myHomeFragment"
+        android:name="com.minjee.basicmvvmexample.view.MainFragment"
+        android:label="fragment_my_home"
+        tools:layout="@layout/fragment_main">
+
+        <action android:id="@+id/action_myHomeFragment_to_mySecondFragment"
+            app:destination="@id/mySecondFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <fragment android:id="@+id/mySecondFragment"
+        android:name="com.minjee.basicmvvmexample.view.DetailFragment"
+        android:label="fragment_my_second"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="arg1"
+            app:argType="string"
+            android:defaultValue="default string"/>
+
+        <argument android:name="arg2"
+            app:argType="com.minjee.basicmvvmexample.model.MyParcelableDataArgs"
+            app:nullable="true"/>
+
+        <action
+            android:id="@+id/action_mySecondFragment_to_myHomeFragment"
+            app:destination="@id/myHomeFragment" />
+    </fragment>
+    </navigation>
