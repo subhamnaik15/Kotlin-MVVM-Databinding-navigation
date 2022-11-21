@@ -61,7 +61,7 @@ class MainFragment: Fragment() {
 
             val arg1 = "Fragment : 1"
             val arg2= MyParcelableDataArgs(email)
-            arg2.userName= viewModel.userNam e.value?:""
+            arg2.userName= viewModel.userName.value?:""
             arg2.password= viewModel.password.value?:0
             val action =
                 MainFragmentDirections.actionMyHomeFragmentToMySecondFragment(
